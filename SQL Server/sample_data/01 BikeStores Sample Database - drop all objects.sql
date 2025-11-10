@@ -8,6 +8,10 @@ Version: 1.0
 --------------------------------------------------------------------
 */
 
+-- create db if not exists
+--CREATE DATABASE BikeStores;
+--USE BikeStores;
+
 -- drop tables
 DROP TABLE IF EXISTS sales.order_items;
 DROP TABLE IF EXISTS sales.orders;
