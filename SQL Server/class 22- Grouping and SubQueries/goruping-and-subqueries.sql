@@ -60,9 +60,23 @@ FROM [sales].[sales_summary]
 GROUP BY
 	ROLLUP(brand, category);
 
+-- ROLLUP
+--()
+--(brand)
+--(brand, category)
+--(brand, category, model_year)
+SELECT 
+	brand,
+	category,
+	SUM(sales) as total_sales
+FROM [sales].[sales_summary]
+GROUP BY
+	ROLLUP(category,);
+
+
 -- SUB-QUERY
 
-SELECT customer_id FROM [sales].[customers] WHERE state = 'NY';
+SELECT customer_id, state FROM [sales].[customers] WHERE state = 'NY';
 
 SELECT * FROM [sales].[orders] 
 WHERE customer_id IN (
